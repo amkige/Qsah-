@@ -6,7 +6,7 @@ const Hero = () => {
   const { direction, toggleDirection } = useDirection();
   const isRTL = direction === "rtl";
   return (
-    <div className="video-container w-full h-100">
+    <section className="hero-section video-container w-full h-100">
       <video autoPlay loop muted playsInline className="background-video cover">
         <source src="/video1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -22,7 +22,7 @@ const Hero = () => {
             : "Qissa – Where Stories Are Written."}
         </h1>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { Inter, Cairo } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import ClientLayout from "@/components/client-layout";
-import Process from "@/components/Process";
+import Process from "@/components/Projects";
+import Navbar from "@/components/navbar";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body>
         <ThemeProvider
           attribute="class"
@@ -30,8 +31,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ClientLayout inter={inter} cairo={cairo}>
+            <Navbar />
             <main>{children}</main>
-            <Process />
           </ClientLayout>
         </ThemeProvider>
       </body>
