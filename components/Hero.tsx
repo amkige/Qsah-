@@ -11,8 +11,12 @@ const Hero = () => {
         <source src="/video1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <section></section>
       <div className="content flex flex-col items-center justify-center h-screen transform translate-y:-150">
-        <h1 className="text-6xl font-bold text-white transform -translate-y-8">
+        <h1
+          className="text-6xl font-bold text-white transform -translate-y-8 "
+          style={{ direction: isRTL ? "rtl" : "ltr" }}
+        >
           {isRTL
             ? " قِصَّة – حيث تُكتب الحكايات"
             : "Qissa – Where Stories Are Written."}
