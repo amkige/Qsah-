@@ -1,6 +1,6 @@
 import React from "react";
 import Cards from "./Cards";
-import Process from "./Process";
+import Process from "./Projects";
 
 const cardInfo = [
   { title: "إعلان 1", image: "red" },
@@ -10,14 +10,16 @@ const cardInfo = [
 
 const Production = () => {
   return (
-    <div className="production flex flex-col items-center">
-      <h1 className="text-6xl font-bold text-white text-center">
-        إعلاناتنا ومشاريعنا السابقة
-      </h1>
-      <div className="processHolder">
+    <section className="production-section">
+      <div className="production flex flex-col items-center">
+        <h1 className="text-6xl font-bold text-white text-center">
+          إعلاناتنا ومشاريعنا السابقة
+        </h1>
+        <div className="processHolder">
 
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
