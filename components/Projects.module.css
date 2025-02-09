@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
+  margin-top: 50px;
 }
 
 :global([dir="rtl"]) .projects-section {
@@ -13,7 +14,7 @@
 
 .main {
   width: 100vw;
-  height: 150vh;
+  height: 130vh;
   flex-direction: column;
 }
 
@@ -34,7 +35,7 @@
 
 .card {
   position: relative;
-  width: 40%;
+  width: 30%;
   height: 360px;
   border-radius: 0.75em;
   overflow: hidden;
@@ -43,7 +44,7 @@
 
 .main-content {
   position: absolute;
-  top: 45%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;

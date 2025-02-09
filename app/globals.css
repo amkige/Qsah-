@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -74,6 +76,7 @@
 html,
 body {
   scroll-behavior: smooth;
+  font-family: 'cairo';
 }
 
 [dir="rtl"] * {
@@ -109,7 +112,7 @@ body {
 /* Start production section */
 .production {
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   position: relative;
   background: url("/overlay1.jpg") no-repeat center center/cover;
   color: white; /* Ensures text is visible on the overlay */
@@ -150,7 +153,6 @@ body {
 .ProcessHolder {
   width: 100%;
   height: 100%;
-  font-family: "Mabry Pro";
   background-color: #000;
   color: #fff;
 }

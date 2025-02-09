@@ -10,7 +10,7 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet";
-import Hero from "./Hero";
+
 
 const menuItems = [
   { title: { en: "Home", ar: "الرئيسية" }, href: "#home" },
