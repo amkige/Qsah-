@@ -53,7 +53,8 @@ export default function Navbar() {
               </div>
             </SheetContent>
           </Sheet>
-          <span className="text-2xl font-bold text-[#edbe6e]">قِصَّة</span>
+          <img src="/logo.png" style={{ width: "25px" }} alt="" />
+          {/* <span className="text-2xl font-bold text-[#edbe6e]">قِصَّة</span> */}
         </div>
 
         <div className="flex items-center gap-2">

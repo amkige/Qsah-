@@ -1,0 +1,162 @@
+.videoSlider {
+  position: relative;
+  padding: 40px 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+  z-index: 1;
+}
+.videoSlider::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  /* background-image: url("/overlay2.webp");
+  background-size: cover; */
+  background: rgb(237, 190, 110);
+  background: radial-gradient(
+    circle,
+    rgba(237, 190, 110, 0) 0%,
+    rgba(0, 0, 0, 0.295) 62%
+  );
+  z-index: 1;
+  filter: blur(8px);
+}
+.videoSlider::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  /* background-image: url("/overlay2.webp");
+  background-size: cover; */
+  background: rgb(237, 190, 110);
+  background: radial-gradient(
+    circle,
+    rgba(237, 190, 110, 0.199) 0%,
+    rgba(0, 0, 0, 1) 62%
+  );
+  z-index: -1;
+  filter: blur(8px);
+}
+.title {
+  font-size: 52px;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin: 40px 0px;
+  z-index: 3;
+}
+
+.p {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6a6a6a;
+}
+
+.container {
+  z-index: 2;
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slider {
+  width: 70vw;
+  height: 100vh;
+  perspective: 175px;
+  perspective-origin: 50% 100%;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0px);
+  width: 65%;
+  height: 500px;
+  background: #000;
+  padding-bottom: 200px;
+  border: 1px solid #303030;
+  border-radius: 7px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #303030;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.cardInfo {
+  width: 100%;
+  padding: 0.5em 0.75em;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  z-index: 2;
+}
+
+.cardItem {
+  flex: 1;
+}
+
+.cardItem p {
+  font-size: 7px;
+  color: #6a6a6a;
+}
+
+.cardItem:nth-child(2) {
+  text-align: center;
+}
+
+.cardItem:nth-child(2) p {
+  font-size: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.cardItem:nth-child(3) {
+  text-align: right;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.videoPlayer > div {
+  position: relative;
+  transform: scale(1.5);
+}
+
+@media (max-width: 900px) {
+  .videoPlayer > div {
+    transform: scale(3);
+  }
+  .slider {
+    width: 100%;
+  }
+  .card {
+    width: 60%;
+  }
+}

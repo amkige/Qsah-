@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import HowWeWork from "@/components/HowWeWork";
+import Slider from "@/components/slider/Slider";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         </h1>
         </section> */}
       <HowWeWork />
+      <Slider />
     </>
   );
 }
