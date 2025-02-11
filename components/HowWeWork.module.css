@@ -1,13 +1,14 @@
 .howWeWorkSection {
   position: relative;
-  padding: 0px 20px;
+  padding: 60px 20px;
   text-align: center;
   background-color: rgb(0, 0, 0);
-  height: 80vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-top: 1px solid #edbe6e00;
 }
 .howWeWorkSection::before {
   content: "";
@@ -35,7 +36,7 @@
 }
 
 .title {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: 50px;
   color: #edbe6e;
@@ -55,11 +56,11 @@
   padding: 0;
   max-width: 600px;
   text-align: left;
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .steps li {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 10px;
   color: #b9b6b6;
 }
@@ -92,4 +93,36 @@
   font-size: 2rem;
   font-weight: bold;
   color: #ff6600;
+}
+@media (max-width: 900px) {
+  .howWeWorkSection {
+    padding: 60px 30px;
+  }
+  .title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #edbe6e;
+    text-align: center;
+  }
+  .howWeWorkSection::after {
+    content: "";
+    position: absolute;
+    top: 12%;
+    right: 25%;
+    width: 35px;
+    height: 35px;
+    transform: rotate(30deg);
+    transform: translate(75px, -55px);
+  }
+
+  .title {
+    font-size: 2.6rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .steps li {
+    text-align: center !important;
+  }
 }

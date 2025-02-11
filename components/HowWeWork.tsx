@@ -34,7 +34,7 @@ const workProcess = [
 const HowWeWork = () => {
   const { direction } = useDirection();
   const isRTL = direction === "rtl";
-    const dir = isRTL ? "right" : "left";
+  const dir = isRTL ? "right" : "left";
   return (
     <section className={styles.howWeWorkSection}>
       <h1 className={styles.title}>
@@ -53,24 +53,24 @@ const HowWeWork = () => {
 
         <div className={styles.equation}>
           <div className={styles.item}>
-            <img src="/writing.webp" alt="Creative Writing" />
+            <img src="/writing.png" alt="Creative Writing" />
             <p>{isRTL ? "الكتابة الإبداعية" : "Creative Writing"}</p>
           </div>
           <div className={styles.symbol}>+</div>
           <div className={styles.item}>
-            <img src="/Filming.webp" alt="Filming" />
+            <img src="/Filming.png" alt="Filming" />
             <p>{isRTL ? "التصوير" : "Filming"}</p>
           </div>
           <div className={styles.symbol}>+</div>
           <div className={styles.item}>
-            <img src="/editing.webp" alt="Editing" />
+            <img src="/editing.png" alt="Editing" />
             <p>{isRTL ? "التحرير" : "Editing"}</p>
           </div>
           <div className={styles.symbol}>=</div>
           <div className={styles.item}>
-            <img src="/Qsah.webp" alt="Final Video" />
+            <img src="/video.png" alt="Final Video" style={{transform:"translateY(10px)"}}/>
             <p>
-              <strong>{isRTL ? "🎬 الفيديو" : "🎬 The Video"}</strong>
+              <strong>{isRTL ? " الفيديو 🎬" : "🎬 The Video"}</strong>
             </p>
           </div>
         </div>

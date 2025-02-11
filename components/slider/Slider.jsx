@@ -5,6 +5,7 @@ import gsap from "gsap";
 import dynamic from "next/dynamic";
 import { videos } from "./videos";
 import styles from "./Slider.module.css"; // Import CSS module
+import { useDirection } from "@/hooks/use-direction";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -12,6 +13,8 @@ const Slider = () => {
   const sliderRef = useRef(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const { direction, toggleDirection } = useDirection();
+  const isRTL = direction === "rtl";
 
   useEffect(() => {
     setIsClient(true);
@@ -70,8 +73,8 @@ const Slider = () => {
 
   return (
     <div className={styles.videoSlider}>
-      <p className={styles.title} >
-        أعمــــــــــــال قِصّة
+      <p className={styles.title}>
+        {isRTL ? "أعمــــــــــــال قِصّة" : "Qsah Productions"}
       </p>
       <div className={styles.container}>
         <div className={styles.slider} ref={sliderRef}>

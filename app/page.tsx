@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import HowWeWork from "@/components/HowWeWork";
+import OurClients from "@/components/OurClients/OurClients";
 import Slider from "@/components/slider/Slider";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         </section> */}
       <HowWeWork />
       <Slider />
+      <OurClients/>
     </>
   );
 }
