@@ -157,9 +157,11 @@ body {
   flex-direction: column;
   border-radius: 10px;
 }
-@media (max-width: 900px) {
-.qsah{
-  width: 90% !important;
-}
-}
 /* End production section */
+
+.ProcessHolder {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+}

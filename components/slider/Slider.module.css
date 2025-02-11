@@ -140,6 +140,12 @@
   transform: scale(1.5);
 }
 
+@media (min-width: 1600px) {
+  .card {
+  width: 53%;
+}
+}
+
 @media (max-width: 900px) {
   .videoPlayer > div {
     transform: scale(3);
