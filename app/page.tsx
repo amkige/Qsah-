@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import HowWeWork from "@/components/HowWeWork";
 import OurClients from "@/components/OurClients/OurClients";
 import Slider from "@/components/slider/Slider";
+import VideoServicesCircle from "@/components/VideoServicesCircle/VideoServicesCircle";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <HowWeWork />
       <Slider />
       <OurClients/>
+      <VideoServicesCircle/>
     </>
   );
 }
