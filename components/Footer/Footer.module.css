@@ -2,11 +2,12 @@
   position: relative;
   background-color: black;
   color: white;
-  padding: 12px 16px;
+  padding: 25px 16px;
   bottom: 0;
   width: 100%;
   z-index: 50;
   box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid #edbe6e;
 }
 .footer ::after {
   content: "";
@@ -21,8 +22,8 @@
   left: 0px;
 }
 
-.qsahcontainer{
-      display: flex;
+.qsahcontainer {
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -47,7 +48,6 @@
 .img {
   width: 130px;
 }
-
 
 .text-gray {
   color: gray;
