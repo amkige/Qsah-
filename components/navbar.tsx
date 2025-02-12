@@ -14,14 +14,15 @@ import {
 
 const menuItems = [
   { title: { en: "Home", ar: "الرئيسية" }, href: "#home" },
-  { title: { en: "Our Ads", ar: "إعلاناتنا" }, href: "#ads" },
-  { title: { en: "Our Projects", ar: "مشاريعنا" }, href: "#projects" },
-  { title: { en: "Our Office", ar: "مكتبنا" }, href: "#office" },
-  { title: { en: "Studio", ar: "الاستوديو" }, href: "#studio" },
-  { title: { en: "Contact", ar: "التواصل" }, href: "#contact" },
-  { title: { en: "Careers", ar: "التوظيف" }, href: "#careers" },
+  { title: { en: "About Us", ar: "من نحن" }, href: "#about" },
+  { title: { en: "Our Work", ar: "اعمالنا" }, href: "#work" },
+  { title: { en: "Contact Us", ar: "تواصل معنا" }, href: "#contact" },
 ];
 
+  // { title: { en: "Our Office", ar: "مكتبنا" }, href: "#office" },
+  // { title: { en: "Studio", ar: "الاستوديو" }, href: "#studio" },
+  // { title: { en: "Contact", ar: "التواصل" }, href: "#contact" },
+  // { title: { en: "Careers", ar: "التوظيف" }, href: "#careers" },
 export default function Navbar() {
   const { direction, toggleDirection } = useDirection();
   const isRTL = direction === "rtl";

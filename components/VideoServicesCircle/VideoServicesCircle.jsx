@@ -2,53 +2,57 @@
 import React, { useState, useEffect } from "react";
 import { Video, Pencil, Camera, Film, Upload } from "lucide-react";
 import gsap from "gsap";
+import { useDirection } from "@/hooks/use-direction";
+import styles from "./VideoTimeline.module.css";
 
 const VideoTimeline = () => {
   const [activeStep, setActiveStep] = useState(1);
+  const { direction } = useDirection();
+  const isRTL = direction === "rtl";
 
-  const steps = [
-    {
-      id: 1,
-      title: "كتابة السيناريو",
-      icon: Pencil,
-      description: "تطوير الفكرة وكتابة النص",
-    },
-    {
-      id: 2,
-      title: "التصوير",
-      icon: Camera,
-      description: "تصوير المشاهد باحترافية",
-    },
-    {
-      id: 3,
-      title: "المونتاج",
-      icon: Film,
-      description: "تحرير وتنسيق المحتوى",
-    },
-    {
-      id: 4,
-      title: "التسليم",
-      icon: Upload,
-      description: "تسليم المنتج النهائي",
-    },
-  ];
+const steps = [
+  {
+    id: 1,
+    title: isRTL ? "كتابة القصة" : "Storywriting",
+    icon: Pencil,
+    description: isRTL ? "تحويل الفكرة إلى نص" : "Shaping the idea into words",
+  },
+  {
+    id: 2,
+    title: isRTL ? "التصوير السينمائي" : "Filming",
+    icon: Camera,
+    description: isRTL ? "إحياء القصة بالصور" : "Bringing stories to life",
+  },
+  {
+    id: 3,
+    title: isRTL ? "المونتاج الإبداعي" : "Editing",
+    icon: Film,
+    description: isRTL ? "تنسيق المشاهد بإبداع" : "Crafting the flow",
+  },
+  {
+    id: 4,
+    title: isRTL ? "الإصدار والمشاركة" : "Publishing",
+    icon: Upload,
+    description: isRTL ? "إطلاق القصة للعالم" : "Sharing the story",
+  },
+];
+
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev < steps.length ? prev + 1 : 1));
-    }, 1500);
-
+    }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [isRTL]);
 
   useEffect(() => {
-    gsap.to(".step", {
+    gsap.to(`.${styles.step}`, {
       opacity: 1,
       scale: 1,
       duration: 0.5,
       ease: "power2.out",
     });
-    gsap.to(".progress-line", {
+    gsap.to(`.${styles.progressLine}`, {
       width: `${(activeStep / steps.length) * 100}%`,
       duration: 1,
       ease: "power2.out",
@@ -56,76 +60,83 @@ const VideoTimeline = () => {
   }, [activeStep]);
 
   return (
-    <div
-      className="w-full max-w-4xl mx-auto p-8 bg-black text-white min-h-screen flex flex-col items-center"
-      dir="rtl"
-    >
-      {/* Header */}
-      <div className="text-center mb-12">
-        <h2 className="text-2xl font-bold text-white mb-4">
-          رحلة إنتاج الفيديو
-        </h2>
-        <div className="flex items-center justify-center gap-2">
-          <Video className="w-6 h-6 text-[#e9bb6c]" />
-          <p className="text-gray-300">من الفكرة إلى الشاشة</p>
+    <div className={styles.VideoTimeline}>
+      <div
+        className={styles.container}
+        style={{ direction: isRTL ? "rtl" : "ltr" }}
+      >
+        {/* Header */}
+        <div className={styles.header}>
+          <h2 className={styles.title}>
+            {isRTL ? "رحلة إنتاج الفيديو" : "Video Production Journey"}
+          </h2>
+          <div className={styles.subtitle}>
+            <Video
+              className="w-6 h-6 text-[#e9bb6c]"
+              style={{ marginTop: "5px" }}
+            />
+            <p className={styles.subtitleText}>
+              {isRTL ? "من الفكرة إلى الشاشة" : "From Idea to Screen"}
+            </p>
+          </div>
         </div>
-      </div>
 
-      {/* Timeline */}
-      <div className="relative w-full">
-        {/* Timeline Line */}
-        <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-600 -translate-y-1/2">
-          <div className="progress-line h-full bg-[#e9bb6c] transition-all"></div>
-        </div>
+        {/* Timeline */}
+        <div className={styles.timeline}>
+          <div className={styles.timelineLine}>
+            <div className={styles.progressLine}></div>
+          </div>
 
-        {/* Timeline Steps */}
-        <div className="relative flex justify-between">
-          {steps.map((step) => (
-            <div
-              key={step.id}
-              className="relative flex flex-col items-center step opacity-0 scale-90"
-            >
-              {/* Step Circle */}
+          <div className={styles.stepsContainer}>
+            {steps.map((step) => (
               <div
-                className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer z-10
-                ${
-                  activeStep === step.id
-                    ? "bg-[#e9bb6c] scale-110 shadow-xl"
-                    : "bg-gray-700 border-2 border-gray-500"
+                key={step.id}
+                className={`${styles.step} ${
+                  activeStep === step.id ? styles.activeStep : ""
                 }`}
               >
-                <step.icon
-                  className={`w-8 h-8 transition-all ${
-                    activeStep === step.id ? "text-black" : "text-white"
+                <div
+                  className={`${styles.stepCircle} ${
+                    activeStep === step.id
+                      ? styles.stepCircleActive
+                      : styles.stepCircleInactive
                   }`}
-                />
-              </div>
+                >
+                  <step.icon
+                    className={`${styles.stepIcon} ${
+                      activeStep === step.id
+                        ? styles.stepIconActive
+                        : styles.stepIconInactive
+                    }`}
+                  />
+                </div>
 
-              {/* Step Content */}
-              <div
-                className={`mt-4 text-center transition-all duration-300 ${
-                  activeStep === step.id
-                    ? "scale-110 text-[#e9bb6c]"
-                    : "text-gray-400"
-                }`}
-              >
-                <h3 className="font-bold mb-1 text-lg">{step.title}</h3>
-                <p className="text-sm">{step.description}</p>
-              </div>
+                <div className={styles.stepContent}>
+                  <h3>{step.title}</h3>
+                  <p className={styles.description}>{step.description}</p>
+                </div>
 
-              {/* Step Number */}
-              <div
-                className={`absolute -top-8 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold
-                transition-all duration-300 ${
-                  activeStep === step.id
-                    ? "bg-[#e9bb6c] text-black"
-                    : "bg-gray-600 text-gray-300"
-                }`}
-              >
-                {step.id}
+                <div
+                  className={`${styles.stepNumber} ${
+                    activeStep === step.id
+                      ? styles.stepNumberActive
+                      : styles.stepNumberInactive
+                  }`}
+                >
+                  {step.id}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        {/* TV Screen */}
+        <div className={styles.tvScreen}>
+          <div className={styles.tvFrame}>
+            <p className={styles.tvText}>
+              {steps[activeStep - 1].title}: {steps[activeStep - 1].description}
+            </p>
+          </div>
         </div>
       </div>
     </div>

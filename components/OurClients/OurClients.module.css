@@ -1,6 +1,7 @@
 .OurClients {
   position: relative;
-  padding: 50px 0;
+  padding: 60px 0;
+  padding-bottom: 90px ;
   border-top: 1px solid #edbe6e6c;
   background-color: black;
 }
