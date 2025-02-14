@@ -78,6 +78,19 @@ const Slider = () => {
         <div className={styles.slider} ref={sliderRef}>
           {videos.map((video) => (
             <div className={styles.card} key={video.id}>
+              <div className={styles.videoPlayer}>
+                <ReactPlayer
+                  style={{ borderRadius: "10px" }}
+                  url={`https://vimeo.com/${video.id}`}
+                  controls={false}
+                  playing
+                  loop
+                  muted
+                  width="100%"
+                  height="100%"
+        
+                />
+              </div>
               <div className={styles.cardInfo}>
                 <div className={styles.cardItem}>
                   <p>{video.date}</p>
@@ -88,17 +101,6 @@ const Slider = () => {
                 <div className={styles.cardItem}>
                   <p>{video.category}</p>
                 </div>
-              </div>
-              <div className={styles.videoPlayer}>
-                <ReactPlayer
-                  url={`https://vimeo.com/${video.id}`}
-                  controls={false}
-                  playing
-                  loop
-                  muted
-                  width="100%"
-                  height="100%"
-                />
               </div>
             </div>
           ))}
