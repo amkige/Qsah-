@@ -16,11 +16,9 @@ const Hero = () => {
         <img src="/Vector.png" alt="qsah" className="w-100 qsah" />
         <h1
           className="text-3xl font-bold text-white transform -translate-y-8 "
-          style={{ direction: isRTL ? "rtl" : "ltr" ,marginTop:"70px"}}
+          style={{ direction: isRTL ? "rtl" : "ltr", marginTop: "60px" }}
         >
-          {isRTL
-            ? " قِصَّة – حيث تُكتب الحكايات"
-            : "Qsah – Where Stories Are Written."}
+          {isRTL ? "المنتصر يكتب التاريخ" : "Qsah – Where Stories Are Written."}
         </h1>
       </div>
     </section>

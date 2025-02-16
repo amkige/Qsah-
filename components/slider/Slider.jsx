@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { videos } from "./videos";
 import styles from "./Slider.module.css"; // Import CSS module
 import { useDirection } from "@/hooks/use-direction";
+import { useRouter } from "next/navigation";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -15,7 +16,11 @@ const Slider = () => {
   const [isClient, setIsClient] = useState(false);
   const { direction, toggleDirection } = useDirection();
   const isRTL = direction === "rtl";
+  const router = useRouter();
 
+  const handleProjectClick = () => {
+    router.push("/projects"); // Navigate to /projects
+  };
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -88,7 +93,6 @@ const Slider = () => {
                   muted
                   width="100%"
                   height="100%"
-        
                 />
               </div>
               <div className={styles.cardInfo}>
@@ -106,7 +110,7 @@ const Slider = () => {
           ))}
         </div>
       </div>
-      <button className={styles.button}>
+      <button className={styles.button} onClick={handleProjectClick}>
         {isRTL ? "للمزيد من القصص" : "More Stories"}
       </button>
     </div>

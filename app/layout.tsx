@@ -5,6 +5,7 @@ import { Inter, Cairo } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import ClientLayout from "@/components/client-layout";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/Footer/Footer";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -32,6 +33,7 @@ export default function RootLayout({
           <ClientLayout inter={inter} cairo={cairo}>
             <Navbar />
             <main>{children}</main>
+            <Footer />
           </ClientLayout>
         </ThemeProvider>
       </body>

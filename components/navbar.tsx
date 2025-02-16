@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { Menu, Languages } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { useDirection } from "@/hooks/use-direction";
@@ -11,29 +13,25 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 
-
 const menuItems = [
-  { title: { en: "Home", ar: "الرئيسية" }, href: "#home" },
-  { title: { en: "About Us", ar: "من نحن" }, href: "#about" },
-  { title: { en: "Our Work", ar: "اعمالنا" }, href: "#work" },
-  { title: { en: "Contact Us", ar: "تواصل معنا" }, href: "#contact" },
+  { title: { en: "Home", ar: "الرئيسية" }, href: "/" },
+  { title: { en: "About Us", ar: "من نحن" }, href: "/about" },
+  { title: { en: "Our Work", ar: "اعمالنا" }, href: "/projects" },
+  { title: { en: "Contact Us", ar: "تواصل معنا" }, href: "/contactus" },
 ];
 
-  // { title: { en: "Our Office", ar: "مكتبنا" }, href: "#office" },
-  // { title: { en: "Studio", ar: "الاستوديو" }, href: "#studio" },
-  // { title: { en: "Contact", ar: "التواصل" }, href: "#contact" },
-  // { title: { en: "Careers", ar: "التوظيف" }, href: "#careers" },
 export default function Navbar() {
   const { direction, toggleDirection } = useDirection();
   const isRTL = direction === "rtl";
+  const [open, setOpen] = useState(false); // State to control Sheet
 
   return (
-    <nav className=" w-full bg-background/80 backdrop-blur-sm border-b z-50">
+    <nav className="w-full bg-background/80 backdrop-blur-sm border-b z-50">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Sheet>
+          <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" onClick={() => setOpen(true)}>
                 <Menu className="h-5 w-5 text-[#edbe6e]" />
               </Button>
             </SheetTrigger>
@@ -43,19 +41,27 @@ export default function Navbar() {
               </SheetTitle>
               <div className="mt-8 flex flex-col gap-4">
                 {menuItems.map((item) => (
-                  <a
+                  <Link
                     key={item.href}
                     href={item.href}
                     className="text-lg hover:text-[#edbe6e] transition-colors"
+                    onClick={() => setOpen(false)} // Close menu on click
                   >
                     {isRTL ? item.title.ar : item.title.en}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </SheetContent>
           </Sheet>
-          <img src="/logo.png" style={{ width: "25px" }} alt="" />
-          {/* <span className="text-2xl font-bold text-[#edbe6e]">قِصَّة</span> */}
+
+          <Link
+            key={"/"}
+            href={"/"}
+            className="text-lg hover:text-[#edbe6e] transition-colors"
+            onClick={() => setOpen(false)} // Close menu on click
+          >
+            <img src="/logo.png" style={{ width: "25px" }} alt="Logo" />{" "}
+          </Link>
         </div>
 
         <div className="flex items-center gap-2">
