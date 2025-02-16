@@ -1,26 +1,29 @@
 'use client';
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import styles from "./ScrollSection.module.css";
+import { useDirection } from "@/hooks/use-direction";
 
 function ScrollSection() {
-  const sectionRef = useRef(null);
-  const triggerRef = useRef(null);
+  const { direction } = useDirection();
 
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
+    const isRTL = direction === "rtl";
+
     const pin = gsap.fromTo(
-      sectionRef.current,
+      `.${styles["scroll-section-inner"]}`,
       {
         translateX: 0,
       },
       {
-        translateX: "-300vw",
+        translateX: isRTL ? "300vw" : "-300vw",
         ease: "none",
         duration: 1,
         scrollTrigger: {
-          trigger: triggerRef.current,
+          trigger: `.scroll-section`,
           start: "top top",
           end: "2000 top",
           scrub: 0.6,
@@ -34,22 +37,22 @@ function ScrollSection() {
         pin.kill();
       }
     };
-  }, []);
+  }, [direction]);
 
   return (
-    <section className="scroll-section-outer">
-      <div ref={triggerRef}>
-        <div ref={sectionRef} className="scroll-section-inner">
-          <div className="scroll-section">
+    <section className={styles["scroll-section-outer"]}>
+      <div className="scroll-section">
+        <div className={styles["scroll-section-inner"]}>
+          <div className={styles['scroll-section']}>
             <h3>Section 1</h3>
           </div>
-          <div className="scroll-section">
+          <div className={styles['scroll-section']}>
             <h3>Section 2</h3>
           </div>
-          <div className="scroll-section">
+          <div className={styles['scroll-section']}>
             <h3>Section 3</h3>
           </div>
-          <div className="scroll-section">
+          <div className={styles['scroll-section']}>
             <h3>Section 4</h3>
           </div>
         </div>

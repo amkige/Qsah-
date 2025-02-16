@@ -72,10 +72,12 @@
     box-sizing: border-box;
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
+
 html,
 body {
   scroll-behavior: smooth;
@@ -85,13 +87,16 @@ body {
 [dir="rtl"] * {
   letter-spacing: 0 !important;
 }
+
 /* Start Hero section */
 .video-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full screen height */
+  height: 100vh;
+  /* Full screen height */
   overflow: hidden;
 }
+
 .video-container::after {
   content: " ";
   position: absolute;
@@ -119,6 +124,7 @@ body {
   color: white;
   font-size: 2rem;
 }
+
 /* End Hero section */
 /* Start production section */
 .production {
@@ -126,8 +132,10 @@ body {
   height: 150vh;
   position: relative;
   background: url("/overlay1.jpg") no-repeat center center/cover;
-  color: white; /* Ensures text is visible on the overlay */
-  padding: 100px 20px; /* Adjust spacing as needed */
+  color: white;
+  /* Ensures text is visible on the overlay */
+  padding: 100px 20px;
+  /* Adjust spacing as needed */
   z-index: -2;
 }
 
@@ -138,9 +146,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.959); /* Adjust opacity as needed */
+  background: rgba(0, 0, 0, 0.959);
+  /* Adjust opacity as needed */
   z-index: -1;
 }
+
 .cardHolder {
   display: flex;
   justify-content: center;
@@ -149,6 +159,7 @@ body {
   top: 0px;
   height: 100vh;
 }
+
 .cards {
   position: relative;
   width: 1000px;
@@ -159,6 +170,7 @@ body {
   flex-direction: column;
   border-radius: 10px;
 }
+
 /* End production section */
 
 .ProcessHolder {
@@ -166,44 +178,4 @@ body {
   height: 100%;
   background-color: #000;
   color: #fff;
-}
-/* start horizontal slider */
-.scroll-section-outer {
-  overflow: hidden;
-}
-
-.scroll-section-inner {
-  height: 100vh;
-  width: 400vw;
-  display: flex;
-  flex-direction: row;
-  position: relative;
-}
-
-.scroll-section {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.scroll-section:nth-child(1) {
-  background-color: red;
-}
-.scroll-section:nth-child(2) {
-  background-color: blue;
-}
-.scroll-section:nth-child(3) {
-  background-color: green;
-}
-.scroll-section:nth-child(4) {
-  background-color: yellow;
-}
-
-
-.scroll-section h3 {
-  color: var(--primaryTextColor);
-  letter-spacing: var(--headlineMedium);
-  font-size: 50px;
-  text-transform: uppercase;
 }
