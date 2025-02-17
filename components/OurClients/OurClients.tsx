@@ -69,7 +69,7 @@ const OurClients = () => {
             <img src="/client-logo/jood-eskan.svg" alt="jood-eskan" />
             <img src="/client-logo/lendo.svg" alt="lendo" />
             <img src="/client-logo/moe.svg" alt="moe" />
-            <img src="/client-logo/first-mills.svg" alt="first-mills" />
+            <img src="/client-logo/thiqah.svg" alt="thiqah" />
             <img src="/client-logo/zen-hr.svg" alt="zen-hr" />
           </div>
 
