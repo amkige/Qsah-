@@ -73,7 +73,7 @@ export default function Navbar() {
           >
             <Languages className="h-5 w-5 text-[#edbe6e]" />
           </Button>
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
         </div>
       </div>
     </nav>
