@@ -1,25 +1,21 @@
 'use client';
-import React, { useEffect } from "react";
+import React from "react";
 import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import styles from "./ScrollSection.module.css";
-import { useDirection } from "@/hooks/use-direction";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function ScrollSection() {
-  const { direction } = useDirection();
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  useEffect(() => {
-    const isRTL = direction === "rtl";
-
-    const pin = gsap.fromTo(
+  useGSAP(() => {
+    gsap.fromTo(
       `.${styles["scroll-section-inner"]}`,
       {
-        translateX: 0,
+        "--x": "0",
       },
       {
-        translateX: isRTL ? "300vw" : "-300vw",
+        "--x": "-300vw",
         ease: "none",
         duration: 1,
         scrollTrigger: {
@@ -31,13 +27,9 @@ function ScrollSection() {
         },
       }
     );
-    return () => {
-      {
-        /* A return function for killing the animation on component unmount */
-        pin.kill();
-      }
-    };
-  }, [direction]);
+  }, {
+    scope: `.${styles["scroll-section-outer"]}`,
+  });
 
   return (
     <section className={styles["scroll-section-outer"]}>
