@@ -48,7 +48,7 @@ const OurClients = () => {
       </h1>
       <div className={styles.container}>
         <div className={styles.textContent}>
-          <h3 style={{ textAlign: dir }} className={styles.paragraheTitle}>
+          <h3 style={{ textAlign: dir }} className={styles.paragrahTitle}>
             {langContent.title}
           </h3>
           {/* <p style={{ textAlign: dir }} className={styles.paragraheContent}>
