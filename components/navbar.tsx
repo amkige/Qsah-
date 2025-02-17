@@ -12,12 +12,15 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const menuItems = [
   { title: { en: "Home", ar: "الرئيسية" }, href: "/" },
   { title: { en: "About Us", ar: "من نحن" }, href: "/about" },
   { title: { en: "Our Work", ar: "اعمالنا" }, href: "/projects" },
-  { title: { en: "Contact Us", ar: "تواصل معنا" }, href: "/#contactus" },
 ];
 
 export default function Navbar() {
@@ -50,6 +53,25 @@ export default function Navbar() {
                     {isRTL ? item.title.ar : item.title.en}
                   </Link>
                 ))}
+
+                <Link
+                  href="#"
+                  className="text-lg hover:text-[#edbe6e] transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    // Close menu on click
+                    setOpen(false)
+
+                    gsap.to(window, {
+                      duration: 1,
+                      scrollTo: {
+                        y: document.getElementById("contactus")!.offsetTop,
+                      },
+                    });
+                  }}
+                >
+                  {isRTL ? "تواصل معنا" : "Contact Us"}
+                </Link>
               </div>
             </SheetContent>
           </Sheet>
