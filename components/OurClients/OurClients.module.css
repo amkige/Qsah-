@@ -1,10 +1,10 @@
 .OurClients {
   position: relative;
   padding: 60px 0;
-  padding-bottom: 90px ;
+  padding-bottom: 90px;
   border-top: 1px solid #edbe6e6c;
-  background-color: black;
 }
+
 .OurClients::before {
   content: "";
   position: absolute;
@@ -15,8 +15,9 @@
   opacity: 0.02;
   background-image: url("/overlay1.jpg");
   background-size: cover;
-  z-index: 1;
+  z-index: -1;
 }
+
 .title {
   text-align: center;
   font-size: 50px;
@@ -24,6 +25,7 @@
   margin-bottom: 20px;
   font-weight: bold;
 }
+
 .container {
   width: 80%;
   margin: auto;
@@ -32,11 +34,13 @@
   justify-content: center;
   align-items: center;
   gap: 50px;
+  flex-direction: column;
 }
 
 .textContent {
-  width: 50%;
+  width: 80%;
 }
+
 .textContent .paragraheTitle {
   text-align: right;
   font-size: 40px;
@@ -44,12 +48,14 @@
   margin-bottom: 20px;
   font-weight: bold;
 }
+
 .textContent .paragraheContent {
   text-align: right;
   font-size: 18px;
   line-height: 1.5;
   color: white;
 }
+
 .clientsContainer {
   display: flex;
   justify-content: center;
@@ -57,6 +63,7 @@
   flex-direction: column;
   gap: 20px;
 }
+
 .clients {
   display: flex;
   justify-content: center;
@@ -64,29 +71,36 @@
   flex-wrap: wrap;
   gap: 50px;
 }
-.clients .img {
-  width: 80px;
+
+.clients img {
+  filter: brightness(60%) invert(1) grayscale(100%);
 }
+
 @media (max-width: 900px) {
   .title {
     font-size: 40px;
   }
+
   .container {
     flex-direction: column;
   }
+
   .textContent {
     width: 100%;
   }
+
   .textContent .paragraheTitle {
     text-align: center !important;
     font-size: 35px;
     width: 100%;
   }
+
   .textContent .paragraheContent {
     width: 100%;
     text-align: center !important;
     width: 100%;
   }
+
   .clients .img {
     width: 50px;
   }
