@@ -89,7 +89,7 @@ const Slider = () => {
               <div className={styles.videoPlayer}>
                 <ReactPlayer
                   style={{ borderRadius: "10px" }}
-                  url={`https://vimeo.com/${video.id}`}
+                  // url={`https://vimeo.com/${video.id}`}
                   controls={false}
                   playing
                   loop

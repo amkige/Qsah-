@@ -84,6 +84,14 @@ body {
   font-family: "cairo";
 }
 
+:root {
+  --dir: 1
+}
+
+[dir="rtl"] {
+  --dir: -1;
+}
+
 [dir="rtl"] * {
   letter-spacing: 0 !important;
 }
