@@ -19,19 +19,19 @@
 }
 
 .scroll-section:nth-child(1) {
-    background-color: red;
+    background-color: #edbe6e;
 }
 
 .scroll-section:nth-child(2) {
-    background-color: blue;
+    background-color: black;
 }
 
 .scroll-section:nth-child(3) {
-    background-color: green;
+    background-color: #edbe6e;
 }
 
 .scroll-section:nth-child(4) {
-    background-color: yellow;
+    background-color: black;
 }
 
 
