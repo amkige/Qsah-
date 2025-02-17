@@ -143,7 +143,7 @@
   padding: 10px 20px;
   font-size: 16px;
   color: #edbe6e;
-  border: 2px solid #edbe6e;
+  border: 2px solid #edbe6e8a;
   font-weight: bold;
   border-radius: 8em;
   outline: none;
@@ -151,7 +151,7 @@
 }
 .button:hover {
   background-color: #edbe6e;
-  color: #000;
+  color: #070707;
 }
 @media (min-width: 1600px) {
   .card {

@@ -43,7 +43,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="text-center text-sm text-gray-500">
             <p>
-              &copy; 2024 Qsah Creative Agency.{" "}
+              &copy; {new Date().getFullYear()} Qsah Creative Agency.{" "}
               {isRTL ? "جميع الحقوق محفوظة." : "All rights reserved."}
             </p>
           </div>
@@ -54,26 +54,3 @@ const Footer = () => {
 };
 
 export default Footer;
-{
-  /* Contact & Address */
-}
-{
-  /* <div style={{ textAlign: "center"}} className={`${styles.flex}   mb-10`}>
-          <div>
-            <h3 className={`${styles.textGold} text-lg font-semibold`}>
-              {isRTL ? "تواصل معنا" : "Contact Us"}
-            </h3>
-            <p className={`${styles.textGray} mt-2`}>info@qsah.sa</p>
-          </div>
-          <div>
-            <h3 className={`${styles.textGold} text-lg font-semibold`}>
-              {isRTL ? "العنوان" : "Address"}
-            </h3>
-            <p className={`${styles.textGray} mt-2`}>
-              {isRTL
-                ? "طريق عثمان بن عفان, النرجس, الرياض, المملكة العربية السعودية"
-                : "Othman Bin Affan Road, Narjis, Riyadh, Saudi Arabia"}
-            </p>
-          </div>
-        </div> */
-}

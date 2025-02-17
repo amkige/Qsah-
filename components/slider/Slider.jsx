@@ -8,6 +8,7 @@ import styles from "./Slider.module.css"; // Import CSS module
 import { useDirection } from "@/hooks/use-direction";
 import { useRouter } from "next/navigation";
 
+
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 const Slider = () => {
@@ -20,6 +21,8 @@ const Slider = () => {
 
   const handleProjectClick = () => {
     router.push("/projects"); // Navigate to /projects
+    console.log(1);
+    
   };
   useEffect(() => {
     setIsClient(true);
@@ -78,7 +81,7 @@ const Slider = () => {
 
   return (
     <div className={styles.videoSlider}>
-      <p className={styles.title}>{isRTL ? "قصص قِصّة" : "Qisa Stories"}</p>
+      <p className={styles.title}   >{isRTL ? "قصص قِصّة" : "Qisa Stories"}</p>
       <div className={styles.container}>
         <div className={styles.slider} ref={sliderRef}>
           {videos.map((video) => (
@@ -110,8 +113,9 @@ const Slider = () => {
           ))}
         </div>
       </div>
-      <button className={styles.button} onClick={handleProjectClick}>
-        {isRTL ? "للمزيد من القصص" : "More Stories"}
+      <button className={styles.button} onClick={() => { console.log(1);
+       }}>
+          {isRTL ? "للمزيد من القصص" : "More Stories"}
       </button>
     </div>
   );

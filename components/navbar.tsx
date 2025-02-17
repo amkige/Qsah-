@@ -17,7 +17,7 @@ const menuItems = [
   { title: { en: "Home", ar: "الرئيسية" }, href: "/" },
   { title: { en: "About Us", ar: "من نحن" }, href: "/about" },
   { title: { en: "Our Work", ar: "اعمالنا" }, href: "/projects" },
-  { title: { en: "Contact Us", ar: "تواصل معنا" }, href: "/contactus" },
+  { title: { en: "Contact Us", ar: "تواصل معنا" }, href: "/#contactus" },
 ];
 
 export default function Navbar() {
