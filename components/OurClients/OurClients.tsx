@@ -56,91 +56,29 @@ const OurClients = () => {
           </p> */}
         </div>
         <div className={styles.clientsContainer}>
-          {/* 
-            Import these image into 4 rows
-
-            /client-logo/circlys.svg
-            /client-logo/ekar.svg
-            /client-logo/first-mills.svg
-            /client-logo/haraj.svg
-            /client-logo/jahez.svg
-            /client-logo/jeelpay.svg
-            /client-logo/jood-eskan.svg
-            /client-logo/lendo.svg
-            /client-logo/moe.svg
-            /client-logo/moj.svg
-            /client-logo/sabic.svg
-            /client-logo/saip.svg
-            /client-logo/sopc.svg
-            /client-logo/soum.svg
-            /client-logo/thiqah.svg
-            /client-logo/zen-hr.svg
-          */}
-
           <div className={styles.clients}>
-            <img
-              src="/client-logo/circlys.svg"
-              alt="circlys"
-            />
-            <img
-              src="/client-logo/ekar.svg"
-              alt="ekar"
-            />
-            <img
-              src="/client-logo/first-mills.svg"
-              alt="first-mills"
-            />
-            <img
-              src="/client-logo/haraj.svg"
-              alt="haraj"
-            />
-            <img
-              src="/client-logo/jahez.svg"
-              alt="jahez"
-            />
+            <img src="/client-logo/circlys.svg" alt="circlys" />
+            <img src="/client-logo/ekar.svg" alt="ekar" />
+            <img src="/client-logo/first-mills.svg" alt="first-mills" />
+            <img src="/client-logo/haraj.svg" alt="haraj" />
+            <img src="/client-logo/jahez.svg" alt="jahez" />
           </div>
 
           <div className={styles.clients}>
-            <img
-              src="/client-logo/jeelpay.svg"
-              alt="jeelpay"
-            />
-            <img
-              src="/client-logo/jood-eskan.svg"
-              alt="jood-eskan"
-            />
-            <img
-              src="/client-logo/lendo.svg"
-              alt="lendo"
-            />
-            <img
-              src="/client-logo/moe.svg"
-              alt="moe"
-            />
-            <img
-              src="/client-logo/moj.svg"
-              alt="moj"
-            />
-            {/* add first-mills img */}
+            <img src="/client-logo/jeelpay.svg" alt="jeelpay" />
+            <img src="/client-logo/jood-eskan.svg" alt="jood-eskan" />
+            <img src="/client-logo/lendo.svg" alt="lendo" />
+            <img src="/client-logo/moe.svg" alt="moe" />
+            <img src="/client-logo/moj.svg" alt="moj" />
+            <img src="/client-logo/first-mills.svg" alt="first-mills" />
+            <img src="/client-logo/zen-hr.svg" alt="zen-hr" />
           </div>
 
           <div className={styles.clients}>
-            <img
-              src="/client-logo/sabic.svg"
-              alt="sabic"
-            />
-            <img
-              src="/client-logo/saip.svg"
-              alt="saip"
-            />
-            <img
-              src="/client-logo/sopc.svg"
-              alt="sopc"
-            />
-            <img
-              src="/client-logo/soum.svg"
-              alt="soum"
-            />
+            <img src="/client-logo/sabic.svg" alt="sabic" />
+            <img src="/client-logo/saip.svg" alt="saip" />
+            <img src="/client-logo/sopc.svg" alt="sopc" />
+            <img src="/client-logo/soum.svg" alt="soum" />
           </div>
         </div>
       </div>

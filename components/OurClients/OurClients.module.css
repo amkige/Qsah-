@@ -73,7 +73,7 @@
 }
 
 .clients img {
-  filter: brightness(60%) invert(1) grayscale(100%);
+  filter: brightness(30%) invert(1) grayscale(100%);
 }
 
 @media (max-width: 900px) {
